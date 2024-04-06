@@ -7,11 +7,24 @@ public class Main {
                 Passageiro passageiro2 = new Passageiro("Maria", "987.654.321-00");
                 Passageiro passageiro3 = new Passageiro("José", "456.789.123-00");
 
+
+                
                 List<Passageiro> passageiros = new ArrayList<>();
                 passageiros.add(passageiro1);
                 passageiros.add(passageiro2);
                 passageiros.add(passageiro3);
-                Onibus onibus = new Onibus("ABC-1234", "Mercedes-Benz", passageiros);
+                Onibus onibus = new Onibus(2289, "Mercedes-Benz", passageiros);
+                Viagem viagem1 = new Viagem(
+                        onibus.getNumeroDoOnibus(),
+                        "São Paulo",
+                        "Rio de Janeiro",
+                        "08:00",
+                        "14:00",
+                        42
+                );
+                
+                onibus.addPassageiro(passageiro3, 7);
+                System.out.println(viagem1);
                 System.out.println(onibus);
                 System.out.println(onibus.getQuantidadePassageiros());
                 System.out.println(onibus.isOnibusCheio());

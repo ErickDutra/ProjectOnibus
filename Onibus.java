@@ -1,20 +1,20 @@
 import java.util.List;
 
 public class Onibus {
-        private String placa;
+        private Integer numeroDoOnibus;
         private String modelo;
         private List<Passageiro> passageiros;
         private boolean[] assentos;
 
-        public Onibus(String placa, String modelo, List<Passageiro> passageiros) {
-                this.placa = placa;
+        public Onibus(Integer numeroDoOnibus, String modelo, List<Passageiro> passageiros) {
+                this.numeroDoOnibus = numeroDoOnibus;
                 this.modelo = modelo;
                 this.passageiros = passageiros;
                 this.assentos = new boolean[42];
         }
         
-        public String getPlaca() {
-                return placa;
+        public Integer getNumeroDoOnibus() {
+                return numeroDoOnibus;
         }
 
         public String getModelo() {
@@ -25,8 +25,8 @@ public class Onibus {
                 return passageiros;
         }
 
-        public void setPlaca(String placa) {
-                this.placa = placa;
+        public void setNumeroDoOnibus(Integer numeroDoOnibus) {
+                this.numeroDoOnibus = numeroDoOnibus;
         }
 
         public void setModelo(String modelo) {
@@ -116,9 +116,16 @@ public class Onibus {
                 return false;
         }
 
+        public void addPassageiro(Passageiro passageiro, int index) {
+                if (index >= 0 && index <= passageiros.size()) {
+                    passageiros.add(index, passageiro);
+                }
+            }
+
+
         @Override
         public String toString() {
-                return "Placa: " + placa + ", Modelo: " + modelo + ", Passageiros: " + passageiros;
+                return "Placa: " + numeroDoOnibus + ", Modelo: " + modelo + ", Passageiros: " + passageiros;
         }
 
 }
