@@ -4,6 +4,7 @@ public class Viagem {
     private String destino;
     private String horarioPartida;
     private String horarioChegada;
+ 
     private int quantidadeMaximaPassageiros;
 
   
@@ -49,6 +50,8 @@ public class Viagem {
         this.horarioPartida = horarioPartida;
     }
 
+
+
     public String getHorarioChegada() {
         return horarioChegada;
     }
@@ -65,6 +68,7 @@ public class Viagem {
         this.quantidadeMaximaPassageiros = quantidadeMaximaPassageiros;
     }
 
+
     @Override
     public String toString() {
         return "Viagem{" +
@@ -73,6 +77,7 @@ public class Viagem {
                 ", destino='" + destino + '\'' +
                 ", horarioPartida='" + horarioPartida + '\'' +
                 ", horarioChegada='" + horarioChegada + '\'' +
+
                 ", quantidadeMaximaPassageiros=" + quantidadeMaximaPassageiros +
                 '}';
     }

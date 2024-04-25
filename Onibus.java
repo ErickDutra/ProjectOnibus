@@ -49,6 +49,9 @@ public class Onibus {
                 passageiros.remove(index);
         }
 
+        
+
+
         public void removePassageiros() {
                 passageiros.clear();
         }
@@ -127,5 +130,6 @@ public class Onibus {
         public String toString() {
                 return "Placa: " + numeroDoOnibus + ", Modelo: " + modelo + ", Passageiros: " + passageiros;
         }
+
 
 }
