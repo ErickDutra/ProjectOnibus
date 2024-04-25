@@ -10,7 +10,7 @@ public class Onibus {
                 this.numeroDoOnibus = numeroDoOnibus;
                 this.modelo = modelo;
                 this.passageiros = passageiros;
-                this.assentos = new boolean[42];
+                this.assentos = new boolean[9];
         }
         
         public Integer getNumeroDoOnibus() {
