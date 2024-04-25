@@ -32,7 +32,8 @@ public class Main {
                 passageiros_viagem2.add(passageiro2);
                 passageiros_viagem2.add(passageiro9);
 
-                Queue<Reserva> filaReservas = new LinkedList<>();
+                Queue<Reserva> filaReservasViagem1 = new LinkedList<>();
+                Queue<Reserva> filaReservasViagem2 = new LinkedList<>();
 
                 //Passageiro passageiro = filaReservas.remove();
                 //System.out.println("Reserva confirmada para: " + passageiro.getNome());
@@ -93,19 +94,18 @@ public class Main {
                                         Integer numeroViagem = s.nextInt();
                                         System.out.println("(1) São Paulo - Rio de Janeiro | (2) Brasilia - Curitiba");
                                         Viagem selecaoViagem = viagem1;
+                                        System.out.println("Digite o número do assento:");
+                                        Integer assento = s.nextInt();
+                                        Reserva reserva = new Reserva(passageiro,selecaoViagem,onibus1.getNumeroDoOnibus(), assento, "PENDENTE");
                                         if(numeroViagem == 1){
+                                                filaReservasViagem1.add(reserva);
                                                 selecaoViagem = viagem1;
                                                 System.out.println("Viagem selecionada: São Paulo - Rio de Janeiro");
                                         }else if(numeroViagem == 2){
+                                                filaReservasViagem2.add(reserva);
                                                 selecaoViagem = viagem2;
                                                 System.out.println("Viagem selecionada: Brasilia - Curitiba");
                                         }
-                                        System.out.println("Digite o número do assento:");
-                                        Integer assento = s.nextInt();
-                                        
-
-                                        Reserva reserva = new Reserva(passageiro,selecaoViagem,onibus1.getNumeroDoOnibus(), assento, "PENDENTE");
-                                        filaReservas.add(reserva);
                                 case 8:
                                     break;
                                 
