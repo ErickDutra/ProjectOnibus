@@ -48,4 +48,15 @@ public class Reserva {
         this.assento = assento;
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Reserva{" +
+            "passageiro=" + passageiro +
+            ", viagem=" + viagem +
+            ", onibus=" + onibus +
+            ", assento=" + assento +
+            ", status='" + status + '\'' +
+            '}';
+    }
 }

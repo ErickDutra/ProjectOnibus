@@ -10,7 +10,7 @@ public class Onibus {
                 this.numeroDoOnibus = numeroDoOnibus;
                 this.modelo = modelo;
                 this.passageiros = passageiros;
-                this.assentos = new boolean[9];
+                this.assentos = new boolean[10];
         }
         
         public Integer getNumeroDoOnibus() {
@@ -49,8 +49,9 @@ public class Onibus {
                 passageiros.remove(index);
         }
 
-        
-
+        public int getAssentosDisponiveis() {
+                return 10 - passageiros.size();
+            }
 
         public void removePassageiros() {
                 passageiros.clear();
@@ -61,7 +62,7 @@ public class Onibus {
         }
 
         public boolean isOnibusCheio() {
-                return passageiros.size() == 42;
+                return passageiros.size() == 10;
         }
 
         public boolean isOnibusVazio() {
@@ -129,6 +130,10 @@ public class Onibus {
         @Override
         public String toString() {
                 return "Placa: " + numeroDoOnibus + ", Modelo: " + modelo + ", Passageiros: " + passageiros;
+        }
+
+        public int getNumeroDeAssentos() {
+                return assentos.length;
         }
 
 
