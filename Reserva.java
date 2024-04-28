@@ -52,11 +52,11 @@ public class Reserva {
     @Override
     public String toString() {
         return "Reserva{" +
-            "passageiro=" + passageiro +
-            ", viagem=" + viagem +
-            ", onibus=" + onibus +
-            ", assento=" + assento +
-            ", status='" + status + '\'' +
+            "Passageiro:" + passageiro +
+            ", Viagem:" + viagem +
+            ", Onibus:" + onibus +
+            ", Assento:" + assento +
+            ", Status:" + status + '\'' +
             '}';
     }
 }

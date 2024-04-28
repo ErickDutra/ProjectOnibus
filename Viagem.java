@@ -72,13 +72,13 @@ public class Viagem {
     @Override
     public String toString() {
         return "Viagem{" +
-                "numeroOnibus=" + numeroOnibus +
-                ", origem='" + origem + '\'' +
-                ", destino='" + destino + '\'' +
-                ", horarioPartida='" + horarioPartida + '\'' +
-                ", horarioChegada='" + horarioChegada + '\'' +
+                "Numero do Onibus: " + numeroOnibus +
+                ", Origem: '" + origem + '\'' +
+                ", Destino:'" + destino + '\'' +
+                ", Horario Partida: '" + horarioPartida + '\'' +
+                ", Horario Chegada: '" + horarioChegada + '\'' +
 
-                ", quantidadeMaximaPassageiros=" + quantidadeMaximaPassageiros +
+                ", Quantidade Maxima de Passageiros: '" + quantidadeMaximaPassageiros +
                 '}';
     }
 }
