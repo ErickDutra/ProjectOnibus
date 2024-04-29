@@ -257,15 +257,166 @@ public class Main {
                                                 }
                                         }
                                         break;
+                                case 5:
+                                        System.out.println("Para alterar a reserva, digite o numero da viagem:");
+                                        Integer numeroViagemAlteracao = s.nextInt();
+                                        if (numeroViagemAlteracao == 1) {
+                                                System.out.println(
+                                                                "Opções para alteração: Alterar passageiro (1) - Alterar assento (2) - Excluir reserva (3)");
+                                                Integer opcaoAlteracao = s.nextInt();
 
-                            
-                                    
+                                                switch (opcaoAlteracao) {
+                                                        case 1:
+                                                                System.out.println("Alterar passageiro");
+                                                                Reserva reserva1 = filaReservasViagem1.remove();
+                                                                System.out.println("Passageiro: "
+                                                                                + reserva1.getPassageiro().getNome()
+                                                                                + "sera alterado.");
+                                                                System.out.println("Digite o nome do passageiro:");
+                                                                String nomeAlteracao = s.next();
+                                                                reserva1.getPassageiro().setNome(nomeAlteracao);
+                                                                System.out.println("Digite o CPF do passageiro:");
+                                                                String cpfAlteracao = s.next();
+                                                                reserva1.getPassageiro().setCpf(cpfAlteracao);
+                                                                System.out.println("Digite o email do passageiro:");
+                                                                String emailAlteracao = s.next();
+                                                                reserva1.getPassageiro().setEmail(emailAlteracao);
+                                                                filaReservasViagem1.add(reserva1);
+                                                                break;
+
+                                                        case 2:
+                                                                if (onibus1.isOnibusCheio()) {
+                                                                        System.out.println(
+                                                                                        "Ônibus cheio, não é possível alterar o assento");
+                                                                        break;
+                                                                }
+                                                                System.out.println("Alterar assento");
+                                                                Reserva reserva2 = filaReservasViagem1.remove();
+                                                                System.out.println("Assento: " + reserva2.getAssento()
+                                                                                + "sera alterado.");
+
+                                                                for (Integer assentos : assentosParaOcuparViagem1) {
+                                                                        if (assentos == reserva2.getAssento()) {
+                                                                                assentosParaOcuparViagem1
+                                                                                                .remove(assentos);
+                                                                        }
+                                                                }
+                                                                System.out.println("Assentos ocupados no ônibus 1:");
+                                                                for (int i = 0; i < onibus1
+                                                                                .getNumeroDeAssentos(); i++) {
+                                                                        if (onibus1.isAssentoOcupado(i)) {
+                                                                                System.out.println("Assento " + i
+                                                                                                + " está ocupado");
+                                                                        } else {
+                                                                                System.out.println("Assento " + i
+                                                                                                + " está disponivel");
+                                                                        }
+
+                                                                }
+                                                                System.out.println("Digite o novo assento:");
+                                                                Integer assentoAlteracao = s.nextInt();
+                                                                reserva2.setAssento(assentoAlteracao);
+                                                                filaReservasViagem1.add(reserva2);
+                                                                break;
+                                                        case 3:
+                                                                System.out.println("Excluir reserva");
+                                                                Reserva reserva3 = filaReservasViagem1.remove();
+                                                                System.out.println("Reserva excluida");
+                                                                for (Reserva reservas : allReservas) {
+                                                                        if (reservas.getPassageiro().equals(
+                                                                                        reserva3.getPassageiro())) {
+                                                                                reservas.setStatus("CANCELADO");
+                                                                        }
+                                                                }
+                                                                break;
+                                                        default:
+                                                                break;
+                                                }
+
+                                        }
+
+                                        if (numeroViagemAlteracao == 2) {
+                                                System.out.println(
+                                                                "Opções para alteração: Alterar passageiro (1) - Alterar assento (2) - Excluir reserva (3)");
+                                                Integer opcaoAlteracao = s.nextInt();
+
+                                                switch (opcaoAlteracao) {
+                                                        case 1:
+                                                                System.out.println("Alterar passageiro");
+                                                                Reserva reserva2 = filaReservasViagem2.remove();
+                                                                System.out.println("Passageiro: "
+                                                                                + reserva2.getPassageiro().getNome()
+                                                                                + "sera alterado.");
+                                                                System.out.println("Digite o nome do passageiro:");
+                                                                String nomeAlteracao = s.next();
+                                                                reserva2.getPassageiro().setNome(nomeAlteracao);
+                                                                System.out.println("Digite o CPF do passageiro:");
+                                                                String cpfAlteracao = s.next();
+                                                                reserva2.getPassageiro().setCpf(cpfAlteracao);
+                                                                System.out.println("Digite o email do passageiro:");
+                                                                String emailAlteracao = s.next();
+                                                                reserva2.getPassageiro().setEmail(emailAlteracao);
+                                                                filaReservasViagem1.add(reserva2);
+                                                                break;
+
+                                                        case 2:
+                                                                if (onibus1.isOnibusCheio()) {
+                                                                        System.out.println(
+                                                                                        "Ônibus cheio, não é possível alterar o assento");
+                                                                        break;
+                                                                }
+                                                                System.out.println("Alterar assento");
+                                                                Reserva reserva3 = filaReservasViagem2.remove();
+                                                                System.out.println("Assento: " + reserva3.getAssento()
+                                                                                + "sera alterado.");
+
+                                                                for (Integer assentos : assentosParaOcuparViagem1) {
+                                                                        if (assentos == reserva3.getAssento()) {
+                                                                                assentosParaOcuparViagem2
+                                                                                                .remove(assentos);
+                                                                        }
+                                                                }
+                                                                System.out.println("Assentos ocupados no ônibus 2:");
+                                                                for (int i = 0; i < onibus2
+                                                                                .getNumeroDeAssentos(); i++) {
+                                                                        if (onibus2.isAssentoOcupado(i)) {
+                                                                                System.out.println("Assento " + i
+                                                                                                + " está ocupado");
+                                                                        } else {
+                                                                                System.out.println("Assento " + i
+                                                                                                + " está disponivel");
+                                                                        }
+
+                                                                }
+                                                                System.out.println("Digite o novo assento:");
+                                                                Integer assentoAlteracao = s.nextInt();
+                                                                reserva3.setAssento(assentoAlteracao);
+                                                                filaReservasViagem1.add(reserva3);
+                                                                break;
+                                                        case 3:
+                                                                System.out.println("Excluir reserva");
+                                                                Reserva reserva4 = filaReservasViagem2.remove();
+                                                                System.out.println("Reserva excluida");
+                                                                for (Reserva reservas : allReservas) {
+                                                                        if (reservas.getPassageiro().equals(
+                                                                                        reserva4.getPassageiro())) {
+                                                                                reservas.setStatus("CANCELADO");
+                                                                        }
+                                                                }
+                                                                break;
+                                                        default:
+                                                                System.out.println("Opção inválida");
+                                                                break;
+                                                }
+
+                                        }
+
                                 case 8:
                                         break;
 
                                 default:
-                                System.out.println("Opção inválida");
-                                break;
+                                        System.out.println("Opção inválida");
+                                        break;
                         }
 
                 }
