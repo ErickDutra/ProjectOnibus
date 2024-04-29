@@ -29,6 +29,10 @@ public class Reserva {
         this.onibus = onibus;
     }
 
+    public int setAssento(Integer assento) {
+        return this.assento;
+    }
+
     public int getAssento() {
         return this.assento;
     }
@@ -59,4 +63,6 @@ public class Reserva {
             ", Status:" + status + '\'' +
             '}';
     }
+
+    
 }
