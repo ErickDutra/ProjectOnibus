@@ -133,6 +133,11 @@ public class Main {
                                         Integer assento = 0;
                                         if (numeroViagem == 1) {
                                                 System.out.println("Viagem selecionada: São Paulo - Rio de Janeiro");
+                                                if (onibus1.isOnibusCheio()) {
+                                                        System.out.println(
+                                                                        "Ônibus cheio, não é possível fazer a reserva");
+                                                        break;
+                                                }
                                                 System.out.println("Quantidade de assentos:"
                                                                 + onibus1.getNumeroDeAssentos());
                                                 System.out.println("Assentos ocupados no ônibus 1:");
@@ -158,6 +163,12 @@ public class Main {
 
                                         } else if (numeroViagem == 2) {
                                                 System.out.println("Viagem selecionada: Brasilia - Curitiba");
+                                                if (onibus1.isOnibusCheio()) {
+                                                        System.out.println(
+                                                                        "Ônibus cheio, não é possível fazer a reserva");
+                                                        break;
+                                                }
+                                                
                                                 System.out.println("Quantidade de assentos:"
                                                                 + onibus2.getNumeroDeAssentos());
                                                 System.out.println("Assentos ocupados no ônibus 1:");
